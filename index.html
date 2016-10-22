@@ -1,4 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ftayproductionsdundee%2Fvideos%2F1296809200369491%2F%3Ffallback%3D1&width=500&show_text=false&height=281&appId" width="500" height="281" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+  <head>
+    <style>
+      body {
+        padding: 0px;
+        margin: 0px;
+      }
+      
+      #video {
+          display: block;
+          margin: auto;
+          width: 100vw;
+          height: calc((9/16)*100vw);
+      }
+
+      @media (min-aspect-ratio:16/9) {
+          #video {
+              height: 100vh;
+              width: calc((16/9)*100vh);
+          }
+      }
+	  
+	  a {
+		font-family: Arial, sans-serif;
+	  }
+    </style>
+  </head>
+  <body>
+    <div id="video"><video controls src="http://195.195.131.195:1935/redirect/DUSAtv/webcast?scheme=m3u8"></video></div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/swfobject/2.2/swfobject.min.js"></script>
+  <script>
+    var container = document.getElementById("playercontainer");
+	
+	swfobject.embedSWF("https://purplegoat53.github.io/player.swf", 
+                   "video", 
+                   "640",
+                   "480",
+                   "9.0.0",
+                   false,
+                   {streamer: "rtmp://195.195.131.195:80/redirect/DUSAtv", file: "webcast.flv", autostart: "false"},
+			   {allowfullscreen: "true"});
+  </script>
 </html>
